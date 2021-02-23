@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ public class Controller {
         errMsg.textProperty().bind(signinError);
     }
 
+    /*
     public void signInClicked(ActionEvent evt){
 
         String userID = id1.getText();
@@ -44,5 +46,42 @@ public class Controller {
         }
 
         System.out.println("got id:" + userID + ", got password: " + password);
+    }
+
+
+     */
+
+    public void signInClicked(ActionEvent evt){
+
+        String userID = id1.getText();
+        String password = pwd.getText();
+
+        rightStartOfLongRunningProcess(userID);
+
+        System.out.println("got id:" + userID +
+                ", got password: " + password);
+    }
+
+    private void rightStartOfLongRunningProcess(String uID) {
+
+        Runnable loginTask = () -> {
+            try {
+                Thread.sleep(10000);
+
+                Platform.runLater(() -> {
+                    if (!"Yakov".equals(uID)){
+                        id1.setStyle("-fx-background-color: lightpink;");
+                    } else{
+                        id1.setStyle("-fx-background-color: white;");
+                    }
+                });
+
+            } catch (InterruptedException interExp) {
+                interExp.printStackTrace();
+            }
+        };
+
+        Thread workerThread = new Thread(loginTask);
+        workerThread.start();
     }
 }
