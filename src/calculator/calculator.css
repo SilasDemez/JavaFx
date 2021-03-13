@@ -4,6 +4,12 @@
     -fx-font-weight: bold;
     -fx-font-size: 20px;
 }
+#black:hover{
+    -fx-background-color: #3c3939;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
 
 #orange{
     -fx-background-color: #f8ae1b;
@@ -11,10 +17,18 @@
     -fx-font-size: 20px;
 }
 
+#orange:hover{
+    -fx-background-color: #ff9900;
+}
+
 #blau{
     -fx-background-color: #0562ac;
     -fx-font-weight: bold;
     -fx-font-size: 20px;
+}
+
+#blau:hover{
+    -fx-background-color: #053f6d;
 }
 
 #rest{
