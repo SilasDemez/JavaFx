@@ -12,3 +12,5 @@ the 4 basic operations work, also with Ans
 you can also do the operations several times
 clear button works
 more to come!
+
+it also exists as jar --> download and execute it!
