@@ -5,3 +5,5 @@ out/production/JavaFxApplication/calculator/Controller.class
 *.class
 out/production/JavaFxApplication/sample/signin.css
 out/production/JavaFxApplication/sample/signin.fxml
+out/production/JavaFxApplication/pong/pong.fxml
+out/production/JavaFxApplication/pong/pong.css
